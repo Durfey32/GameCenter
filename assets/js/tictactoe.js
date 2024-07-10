@@ -12,6 +12,7 @@ function setPlayer() {
     buildGrid();
 }
 
+
 function playerMove() {
     if (this.textContent == '') {
         this.textContent = mark;
@@ -101,3 +102,4 @@ resetButton.addEventListener('click', function(e) {
     e.preventDefault();
     resetGrid();
 })
+
