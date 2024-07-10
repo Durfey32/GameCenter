@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css">
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/connectfour.css" />
     <title>Document</title>
 </head>
 <body>
@@ -25,12 +25,6 @@
       
           </a>
       
-          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
         </div>
         <div id="navbarBasicExample" class="navbar-menu">
           <a class="navbar-item" href="tictactoe.html">
@@ -55,7 +49,32 @@
           </div>
         </div>
       </nav>
-    <h1>ConnectFour</h1>
+      
+      <div class="container">
+        <div class="row text-center">
+          <h1 class="title is-2 has-text-centered">Connect Four</h1>
+          <h2 class="title is-5 has-text-centered" id="message">Choose <span class="has-text-danger">Red</span> or Black</h2>
+          <form class="has-text-centered subtitle is-5" id="colorForm">
+            <label class="color-option">
+                <input type="radio" name="color" value="red"> Red
+            </label>
+            <label class="color-option">
+                <input type="radio" name="color" value="black"> Black
+            </label>
+        </form>
+        <div class="has-text-centered">
+          <i class="button is-info is-dark">
+            <button id="start" class="btn-primary">Start</button>
+          </i>
+        </div>
     </div>
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          Developed by <strong>BootCampElites</strong> &copy; 
+        </p>
+      </div>
+    </footer>
 </body>
+<script src="./assets/js/Connectfour.js"></script>
 </html>
