@@ -12,7 +12,6 @@ function setPlayer() {
     buildGrid();
 }
 
-
 function playerMove() {
     if (this.textContent == '') {
         this.textContent = mark;
