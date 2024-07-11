@@ -1,14 +1,17 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css">
-    <link rel="stylesheet" type="text/css" href="./assets/css/connectfour.css" />
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/connectfour.css" />
+  <title>ConnectFour</title>
 </head>
+
 <body>
-  <div  class="
+  <div class="
   column
   is-three-quarters-mobile
   is-two-thirds-tablet
@@ -17,64 +20,69 @@
   is-one-quarter-fullhd
 ">
     <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand title is-1"> <a href="index.html"> 🕹️</a> Game Center
-          <a class="navbar-item"> 
-            <svg width="640" height="160" viewBox="0 0 640 160" fill="none" xmlns="http://www.w3.org/2000/svg"> 
-        <path fill-rule="evenodd" clip-rule="evenodd"  class="bd-svg-black" />
-      </svg>
-      
-          </a>
-      
-        </div>
-        <div id="navbarBasicExample" class="navbar-menu">
-          <a class="navbar-item" href="tictactoe.html">
-            Tic•Tac•Toe
-          </a>
-        </div>
-        <div id="navbarBasicExample" class="navbar-menu">
-          <a class="navbar-item" href="connectfour.html">
-            ConnectFour
-          </a>
-        </div>
+      <div class="navbar-brand title is-1"> <a href="index.html"> 🕹️</a> Game Center
+        <a class="navbar-item">
+          <svg width="640" height="160" viewBox="0 0 640 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" class="bd-svg-black" />
+          </svg>
+
+        </a>
+
       </div>
-        <div id="navbarBasicExample" class="navbar-menu">
-          <div class="navbar-end">
-            <a class="navbar-item" href="index.html">
-              Home
-            </a>
-      
-            <a class="navbar-item" href="stats.html">
-              Documentation
-            </a>
-          </div>
-        </div>
-      </nav>
-      
-      <div class="container">
-        <div class="row text-center">
-          <h1 class="title is-2 has-text-centered">Connect Four</h1>
-          <h2 class="title is-5 has-text-centered" id="message">Choose <span class="has-text-danger">Red</span> or Black</h2>
-          <form class="has-text-centered subtitle is-5" id="colorForm">
-            <label class="color-option">
-                <input type="radio" name="color" value="red"> Red
-            </label>
-            <label class="color-option">
-                <input type="radio" name="color" value="black"> Black
-            </label>
+      <div id="navbarBasicExample" class="navbar-menu">
+        <a class="navbar-item" href="tictactoe.html">
+          Tic•Tac•Toe
+        </a>
+      </div>
+      <div id="navbarBasicExample" class="navbar-menu">
+        <a class="navbar-item" href="connectfour.html">
+          ConnectFour
+        </a>
+      </div>
+  </div>
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-end">
+      <a class="navbar-item" href="index.html">
+        Home
+      </a>
+
+      <a class="navbar-item" href="stats.html">
+        Documentation
+      </a>
+    </div>
+  </div>
+  </nav>
+
+  
+    <div class="container">
+      <div class="row text-center">
+        <h1 class="title is-2 has-text-centered">Connect Four</h1>
+        <h2 class="title is-5 has-text-centered">Choose <span class="has-text-danger">Red</span> or Black</h2>
+        <form class="has-text-centered subtitle is-5" id="colorForm">
+          <label class="color-option">
+            <input type="radio" name="color" value="red"> Red
+          </label>
+          <label class="color-option">
+            <input type="radio" name="color" value="black"> Black
+          </label>
         </form>
         <div class="has-text-centered">
-          <i class="button is-info is-dark">
-            <button id="start" class="btn-primary">Start</button>
-          </i>
+          <button id="startGameBtn" class="button is-info is-dark">Start/Reset</button>
         </div>
+      </div>
+      <div id="gameBoard" class="has-text-centered"></div>
     </div>
+
     <footer class="footer">
       <div class="content has-text-centered">
         <p>
-          Developed by <strong>BootCampElites</strong> &copy; 
+          Developed by <strong>BootCampElites</strong> &copy;
         </p>
       </div>
     </footer>
+  </div>
+
+  <script src="./assets/js/Connectfour.js"></script>
 </body>
-<script src="./assets/js/Connectfour.js"></script>
+
 </html>
