@@ -24,4 +24,4 @@
 
 ## WireFrames
 
-Click here to link to GameCenter wireframes...  https://docs.google.com/presentation/d/1txsLTquH0m37SMLgXJuF03eNcSzDhmUvoKdVspa0SJU/edit#slide=id.g2e998c989a8_0_8
+Click here to link to GameCenter wireframes...  https://docs.google.com/presentation/d/17jB1vOyptAwx6cfDuL8DgnaaRicvQS79szWF59XzAlY/edit?usp=sharing

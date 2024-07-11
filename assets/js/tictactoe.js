@@ -1,10 +1,18 @@
 const grid = document.getElementById('grid');
-const msg = document.getElementById('.message');
+const msg = document.getElementById('message');
 const choice = document.querySelector('form');
+const ticStats = document.querySelector('.TicStats');
 let mark;
 let cells;
 
-function setPlayer() {
+// let ticStorage = JSON.parse(localStorage.getItem('TicStats')) ||[];
+
+function displayTic(type, message) {
+    ticArea.textContent = message;
+    ticArea.setAttribute('class', type);
+}
+
+function setMark() {
     mark = this.value;
     msg.textContent = mark + ', click on a square to make your move!';
     choice.classList.add('good-luck');
@@ -38,7 +46,7 @@ switchMark();
 }
 
 function switchMark() {
-    if (makr == 'X') {
+    if (mark == 'X') {
         mark = 'O';
     } else {
         mark = 'X';
@@ -71,7 +79,7 @@ function checkRow() {
 function resetGrid() {
     mark = 'X';
 
-    cells.forEach(function(cell){
+    cells.forEach(function(cell) {
         cell.textContent = '';
         cell.classList.remove('winner');
     });
@@ -93,7 +101,7 @@ function buildGrid() {
 
 let players = Array.prototype.slice.call(document.querySelectorAll('input[name=player-choice]'));
 players.forEach(function(choice){
-    choice.addEventListener('click', setPlayer, false);
+    choice.addEventListener('click', setMark, false);
 });
 
 let resetButton = choice.querySelector('button');
