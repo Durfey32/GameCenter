@@ -1,21 +1,20 @@
-// const conStats = document.querySelector('.HangStats');
 const ticArea = document.querySelector('.TicArea');
-const conArea = document.querySelector('.HangArea');
+const conArea = document.querySelector('.ConArea');
 
-const ticscore = JSON.parse(localStorage.getItem('ticScore'));
-const conscore = JSON.parse(localStorage.getItem('conScore'));
+const ticscore = JSON.parse(localStorage.getItem('ticscore'));
+const conscore = JSON.parse(localStorage.getItem('conscore'));
 
-let ticStorage = JSON.parse(localStorage.getItem('TicStats')) || [];
-let conStorage = JSON.parse(localStorage.getItem('ConStats')) || [];
+// let ticStorage = JSON.parse(localStorage.getItem('TicStats')) || [];
+// let conStorage = JSON.parse(localStorage.getItem('constats')) || [];
 
-function winLossTic() {
-    const evaluateTic = Math.random();
-    if(evaluateTic > 0 && evaluateTic <=0.5) {
-        ticscore.lose++;
-    } else if (evaluateTic > 0.5 && evaluateTic <= 1) {
-        ticscore.win++;
-    }
-}
+// function winLossTic() {
+//     const evaluateTic = Math.random();
+//     if(evaluateTic > 0 && evaluateTic <=0.5) {
+//         ticscore.lose++;
+//     } else if (evaluateTic > 0.5 && evaluateTic <= 1) {
+//         ticscore.win++;
+//     }
+// }
 
 function winLossCon() {
     const evaluateCon = Math.random();
@@ -26,37 +25,33 @@ function winLossCon() {
     }
 }
 
-localStorage.setItem('ticscore', JSON.stringify(ticStorage))
-
-let hangStorage = JSON.parse(localStorage.getItem('HangStats')) ||[];
-
 function displayTic(type, message) {
     ticArea.textContent = message;
     ticArea.setAttribute('class', type);
 }
 
 function displayCon(type, message) {
-    hangArea.textContent = message;
-    hangArea.setAttribute('class', type);
+    conArea.textContent = message;
+    conArea.setAttribute('class', type);
 }
 
 function renderTicScore() {
-    const ticScore = localStorage.getItem('TicStats');
+    const ticscore = localStorage.getItem('ticscore');
 
-    ticStats.textContent = ticScore
+    ticscore.textContent = ticscore
 }
 
 function renderHangScore() {
-    const conScore = localStorage.getItem('ConStats');
+    const conscore = localStorage.getItem('ConStats');
 
-    hangStats.textContent = conScore
+    conscore.textContent = conscore
 }
 
-function updateTicScore() {
-    localStorage.setItem('TicStats', JSON.stringify(ticStorage))
-}
+// function updateTicScore() {
+//     localStorage.setItem('TicStats', JSON.stringify(ticStorage))
+// }
 
-function updateConScore() {
-    localStorage.setItem('ConStats', JSON.stringify(conStorage))
-}
+// function updateConScore() {
+//     localStorage.setItem('ConStats', JSON.stringify(conStorage))
+// }
 
