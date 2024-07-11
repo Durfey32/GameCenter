@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css">
-  <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
   <link rel="stylesheet" type="text/css" href="assets/css/tictactoe.css">
   <title>Tic•Tac•Toe</title>
 </head>
@@ -48,7 +47,7 @@
         </a>
 
         <a class="navbar-item" href="stats.html">
-          Documentation
+          Statistics
         </a>
       </div>
     </div>
@@ -58,28 +57,27 @@
     <div class="row text-center" id="intro section">
       <h1 class="title is-2 has-text-centered">Tic•Tac•Toe</h1>
       <h2 class="title is-5 has-text-centered" id="message">Choose X or O</h2>
+      <div class="has-text-centered">
+      <button id= 'reset' class="button is-dark has">reset</button>
+    </div>
       <form action="#">
-        <fieldset class="has-text-centered subtitle is-5">
+        <fieldset id="choose" class="has-text-centered subtitle is-5">
           <input type="radio" name="player-choice" id="player-choice-1" value="X" />
           <label for="player-choice-1">X</label>
           <input type="radio" name="player-choice" id="player-choice-2" value="O" />
           <label for="player-choice-2">O</label>
         </fieldset>
-        <div class="has-text-centered">
-          <i class="button is-info is-dark">
-            <button id="reset" class="btn btn-primary">Reset</button>
-          </i>
-        </div>
-      </form>
-    </div>
   </div>
-  <div class="row" id="grid-section">
+  <div class="grid" id="grid-section">
     <ul id="grid">
-
     </ul>
   </div>
+  <span class="TicArea"></span>
 </div>
+<button class="button is-dark" id="back">
+  <a class="has" href="index.html">Back</a>
+</button>
 </body>
-<script src="./assets/js/script.js"></script>
 <script src="./assets/js/tictactoe.js"></script>
+<script src="assets/js/stats.js"></script>
 </html>
