@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const ROWS = 6;
 const COLS = 7;
 const RED = 'red';
@@ -186,11 +185,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     startGameBtn.addEventListener('click', startConnectFour);
 });
-=======
+
 
 
 
 function updateConScore() {
     localStorage.setItem('ConStats', JSON.stringify(conStorage))
 }
->>>>>>> main
+
