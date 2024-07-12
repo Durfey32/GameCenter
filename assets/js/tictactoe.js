@@ -56,15 +56,11 @@ function playerTurn(e) {
 function endGame() {
     cells.forEach(cell => cell.removeEventListener('click', playerTurn));
 
-    if (checkRow()) {
-        if (msg.textContent.includes('It\'s a tie!')) {
-            modal.style.display = 'block';
-            declareTie(); 
+    if (checkRow()) { 
         } else {
             gameEnded = false; 
         }
     }
-}
 
 closeModal.addEventListener('click', function() {
     modal.style.display = 'none';
@@ -75,10 +71,9 @@ function resetGame() {
     cells.forEach(cell => {
         cell.textContent = '__';
         cell.classList.remove('winner');
+        cell.addEventListener('click', playerTurn, false);
     });
-    msg.textContent = 'Choose your player:';
-    choice.classList.remove('good-luck');
-    gameEnded = false; 
+    buildGame();
 }
 
 function checkRow() {
@@ -94,17 +89,18 @@ function checkRow() {
     ) {
         return true; 
     }
-      // Check for a tie if all cells are filled
-      if (cells.every(cell => cell.textContent !== '__')) {
-        declareTie();
+    
+    if (cells.every(cell => cell.textContent !== '__')) {
+        declareTie(); 
         return true;
-      }
-    return false; 
+    } else {
+        return false;
+    }
 }
 
 function declareTie() {
     msg.textContent = 'It\'s a tie!';
-    
+    modal.style.display = 'block';
     ticScore.Tie = (ticScore.Tie || 0) + 1;
     localStorage.setItem('ticScore', JSON.stringify(ticScore));
     syncScoreTic();
@@ -162,11 +158,6 @@ let players = Array.prototype.slice.call(document.querySelectorAll('input[name=p
 players.forEach(function(choice){
     choice.addEventListener('click', setMark, false);
 });
-
-const resetModal = function () {
-    modal.classList.remove("hidden");
-    overlay.classList.remove("hidden");
-  };
 
 resetButton.addEventListener('click', function(e) {
     e.preventDefault();
