@@ -58,7 +58,17 @@
       <h1 class="title is-2 has-text-centered">Tic•Tac•Toe</h1>
       <h2 class="title is-5 has-text-centered" id="message">Choose X or O</h2>
       <div class="has-text-centered">
-      <button id= 'reset' class="button is-dark has">reset</button>
+      <button id= 'reset' class="button is-dark">reset</button>
+      <button id="clearScores" class="button is-dark">Clear</button>
+
+      <div id="myModal" class="modal is-active">
+        <div class="modal-background">
+          <div class="modal-content">
+            <span class="modal-close is-large" aria-label="close">&times;</span>
+            <p id="Tie">It's a TIE!!!</p>
+        </div></div>
+
+    </div>
     </div>
       <form action="#">
         <fieldset id="choose" class="has-text-centered subtitle is-5">
@@ -72,9 +82,13 @@
     <ul id="grid">
     </ul>
   </div>
-  <span class="TicArea"></span>
+  <div class="title is-5 has-text-centered">
+  <span class="playerXScore"></span>
+  <span class="playerOScore"></span>
+  <span class="playerTScore"></span>
+  </div>
 </div>
-<button class="button is-dark" id="back">
+<button class="button is-dark mobile" id="back">
   <a class="has" href="index.html">Back</a>
 </button>
 </body>

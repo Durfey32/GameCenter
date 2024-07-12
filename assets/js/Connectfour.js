@@ -186,10 +186,3 @@ document.addEventListener('DOMContentLoaded', () => {
     startGameBtn.addEventListener('click', startConnectFour);
 });
 
-
-
-
-function updateConScore() {
-    localStorage.setItem('ConStats', JSON.stringify(conStorage))
-}
-
