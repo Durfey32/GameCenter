@@ -16,14 +16,8 @@ const conscore = JSON.parse(localStorage.getItem('conscore'));
 //     }
 // }
 
-function winLossCon() {
-    const evaluateCon = Math.random();
-    if(evaluateCon > 0 && evaluateCon <=0.5) {
-        conscore.lose++;
-    } else if (evaluateTic > 0.5 && evaluateCon <= 1) {
-        conscore.win++;
-    }
-}
+// ticScore = isNaN(Number(ticScore)) ? 0 : Number(ticScore);
+
 
 function displayTic(type, message) {
     ticArea.textContent = message;
@@ -36,12 +30,12 @@ function displayCon(type, message) {
 }
 
 function renderTicScore() {
-    const ticscore = localStorage.getItem('ticscore');
+    const ticscore = localStorage.getItem('ticScore');
 
-    ticscore.textContent = ticscore
+    ticScore.textContent = ticScore
 }
 
-function renderHangScore() {
+function renderConScore() {
     const conscore = localStorage.getItem('ConStats');
 
     conscore.textContent = conscore
