@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function() {
     let storedTicScore = JSON.parse(localStorage.getItem('ticScore')) || { X: 0, O: 0, Tie: 0 };
     
