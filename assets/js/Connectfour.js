@@ -186,3 +186,4 @@ document.addEventListener('DOMContentLoaded', () => {
     startGameBtn.addEventListener('click', startConnectFour);
 });
 
+
