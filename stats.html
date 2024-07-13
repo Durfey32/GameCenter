@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css">
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
-    <title>Document</title>
+    <title>Statistics</title>
 </head>
 <body>
   <div  class="
@@ -16,60 +15,86 @@
   is-one-third-widescreen
   is-one-quarter-fullhd
 ">
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand title is-1"> <a href="index.html"> 🕹️</a> Game Center
-          <a class="navbar-item"> 
-            <svg width="640" height="160" viewBox="0 0 640 160" fill="none" xmlns="http://www.w3.org/2000/svg"> 
-        <path fill-rule="evenodd" clip-rule="evenodd"  class="bd-svg-black" />
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand title is-1">
+    <a href="index.html"> 🕹️</a> Game Center
+    <a class="navbar-item">
+      <svg width="200" height="160" viewBox="0 0 640 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" class="bd-svg-black" />
       </svg>
-      
-          </a>
-      
-        </div>
-        <div id="navbarBasicExample" class="navbar-menu">
-          <a class="navbar-item" href="tictactoe.html">
-            Tic•Tac•Toe
-          </a>
-        </div>
-        <div id="navbarBasicExample" class="navbar-menu">
-          <a class="navbar-item" href="connectfour.html">
-            ConnectFour
-          </a>
-        </div>
-      </div>
-        <div id="navbarBasicExample" class="navbar-menu">
-          <div class="navbar-end">
-            <a class="navbar-item" href="index.html">
-              Home
-            </a>
-      
-            <a class="navbar-item" href="stats.html">
-              Statistics
-            </a>
-          </div>
-        </div>
-      </nav>
+
+    </a>
+  </div>
+
+  <a class="navbar-burger" id="burger">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </a>
+
+  <div class="navbar-menu" id="nav-links">
+
+
+    </a>
+
+  </div>
+  <div class="navbar-menu">
+
+    <a class="navbar-item" href="tictactoe.html">
+      Tic•Tac•Toe
+    </a>
+    <a class="navbar-item" href="connectfour.html">
+      ConnectFour
+    </a>
+
+    <a class="navbar-item" href="index.html">
+      Home
+    </a>
+    <a class="navbar-item" href="stats.html">
+      Statistics
+    </a>
+  </div>
+
+      <a class="navbar-item" href="index.html">
+        Home
+      </a>
+
+      <a class="navbar-item" href="stats.html">
+        Statistics
+      </a>
+    </div>
+
+  </div>
+  </div>
+</nav>
       <div class="column">
         <h1 class="title is-2 has-text-centered">Statistics</h1>
-          <div class="TicStats">
-            <h2 class="subtitle is-4 has-text-centered">Tic•Tac•Toe</h2>
-            <span class="TicArea"></span>
-              <ul> 
-                <li class="wintic"></li>
-                <li class="losetic"></li>
-              </ul>
-          </div>
+            <h2 class="button is-info is-dark cell subtitle is-4" >  
+              <a href="tictactoe.html">Tic•Tac•Toe</a>
+            </h2>
+            <div class="title is-5">
+              <span id="scoreX"></span>
+              <span id="scoreO"></span>
+              <span id="scoreTie"></span>
+              </div>
           <div class="ConStats">
-            <h2 class="subtitle is-4 has-text-centered">ConnectFour</h2>
+            <h2 class="button is-link is-light cell subtitle is-4"> 
+              <a href="connectfour.html">Connect Four</a>
+            </h2>
               <Span class="ConArea"></Span>
           </div>
     </div>
     </div>
-    <button class="button is-dark" id="back">
-      <a href="index.html">Back</a>
-    </button>
 </body>
-<script src="./assets/js/tictactoe.js"></script>
+
+
 <script src="assets/js/stats.js"></script>
-<script src="assets/js/Connectfour.js"></script>
+<script src="assets/js/index.js"></script>
+
+
+<!-- <script src="./assets/js/tictactoe.js"></script> -->
+<script src="assets/js/stats.js"></script>
+<!-- <script src="assets/js/Connectfour.js"></script> -->
+
 </html>
