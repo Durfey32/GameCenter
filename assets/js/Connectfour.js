@@ -1,92 +1,99 @@
-const ROWS = 6;
-const COLS = 7;
-const RED = 'red';
-const BLACK = 'black';
-
-let board = []
-let currentPlayer = null;
-let gameRunning = false;
-
 document.addEventListener('DOMContentLoaded', () => {
-    const startGameBtn = document.getElementById('startGameBtn');
-    const colorForm = document.getElementById('colorForm');
-    const gameBoard = document.getElementById('gameBoard');
-    const message = document.createElement('p'); 
-    message.classList.add('subtitle', 'is-5', 'has-text-centered');
-    gameBoard.appendChild(message); 
-   
-    function initializeBoard() {
-        board = [];
-        for (let row = 0; row < ROWS; row++) {
-            board[row] = [];
-            for (let col = 0; col < COLS; col++) {
-                board[row][col] = null; 
-            }
-        }
-    }
+  const startGameBtn = document.getElementById('startGameBtn');
+  const colorForm = document.getElementById('colorForm');
+  const gameBoard = document.getElementById('gameBoard');
+  const message = document.createElement('p');
+  message.classList.add('subtitle', 'is-5', 'has-text-centered');
+  gameBoard.appendChild(message);
 
-    function renderBoard() {
-        gameBoard.innerHTML = '';
+  const ROWS = 6;
+  const COLS = 7;
+  const RED = 'red';
+  const BLACK = 'black';
 
-        for (let row = 0; row < ROWS; row++) {
-            for (let col = 0; col < COLS; col++) {
-                const cell = document.createElement('div');
-                cell.classList.add('cell');
-                if (board[row][col] === RED) {
-                    cell.classList.add('red');
-                } else if (board[row][col] === BLACK) {
-                    cell.classList.add('black');
-                }
-                cell.addEventListener('click', () => handleMove(col));
-                gameBoard.appendChild(cell);
-            }
-        }
-    }
+  let board = [];
+  let currentPlayer = null;
+  let gameRunning = false;
 
-    function handleMove(col) {
-        if (!gameRunning) return;
+  function initializeBoard() {
+      board = [];
+      for (let row = 0; row < ROWS; row++) {
+          board[row] = [];
+          for (let col = 0; col < COLS; col++) {
+              board[row][col] = null;
+          }
+      }
+  }
 
-        let row = dropPiece(col);
+  function renderBoard() {
+      gameBoard.innerHTML = '';
 
-        if (row === -1) {
-            alert('Column is full! Please choose another column.');
-            return;
-        }
+      for (let row = 0; row < ROWS; row++) {
+          for (let col = 0; col < COLS; col++) {
+              const cell = document.createElement('div');
+              cell.classList.add('cell');
+              if (board[row][col] === RED) {
+                  cell.classList.add('red');
+              } else if (board[row][col] === BLACK) {
+                  cell.classList.add('black');
+              }
+              cell.addEventListener('click', () => handleMove(col));
+              gameBoard.appendChild(cell);
+          }
+      }
+  }
 
-        board[row][col] = currentPlayer;
-        renderBoard();
+  function handleMove(col) {
+      if (!gameRunning) return;
 
-        if (checkWin(row, col)) {
-            gameRunning = false;
-            setTimeout(() => {
-                alert(`${currentPlayer.toUpperCase()} wins!`);
-                resetGame();
-            }, 100);
-            return;
-        }
+      let row = dropPiece(col);
 
-        if (checkTie()) {
-            gameRunning = false;
-            setTimeout(() => {
-                alert('It\'s a tie!');
-                resetGame();
-            }, 100);
-            return;
-        }
+      if (row === -1) {
+          showModal('Column is full! Please choose another column.');
+          return;
+      }
 
-        currentPlayer = currentPlayer === RED ? BLACK : RED;
-        message.textContent = `Current turn: ${currentPlayer}`;
-    }
+      board[row][col] = currentPlayer;
+      renderBoard();
 
-    function dropPiece(col) {
-        for (let row = ROWS - 1; row >= 0; row--) {
-            if (board[row][col] === null) {
-                return row;
-            }
-        }
-        return -1; 
-    }
+      if (checkWin(row, col)) {
+          gameRunning = false;
+          showModal(`${currentPlayer.toUpperCase()} wins!`, resetGame);
+          return;
+      }
 
+      if (checkTie()) {
+          gameRunning = false;
+          showModal('It\'s a tie!', resetGame);
+          return;
+      }
+
+      currentPlayer = currentPlayer === RED ? BLACK : RED;
+      message.textContent = `Current turn: ${currentPlayer}`;
+  }
+
+  function showModal(message, callback = null) {
+      const modal = document.getElementById('modal');
+      const modalMessage = document.getElementById('modal-message');
+      modalMessage.textContent = message;
+      modal.classList.add('is-active');
+
+      modal.addEventListener('click', function(event) {
+          if (event.target === modal || event.target === document.getElementById('modal-ok')) {
+              modal.classList.remove('is-active');
+              if (callback) callback();
+          }
+      });
+  }
+
+  function dropPiece(col) {
+      for (let row = ROWS - 1; row >= 0; row--) {
+          if (board[row][col] === null) {
+              return row;
+          }
+      }
+      return -1;
+  }
     function checkWin(row, col) {
       
         let count = 0;
@@ -147,46 +154,40 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function checkTie() {
-        for (let col = 0; col < COLS; col++) {
-            if (board[0][col] === null) {
-                return false;
-            }
-        }
-        return true;
-    }
+      for (let col = 0; col < COLS; col++) {
+          if (board[0][col] === null) {
+              return false;
+          }
+      }
+      return true;
+  }
 
-    function startConnectFour() {
-        const selectedColor = colorForm.querySelector('input[name="color"]:checked');
+  function startConnectFour() {
+      const selectedColor = colorForm.querySelector('input[name="color"]:checked');
 
-        if (!selectedColor) {
-            alert('Please select a color to start the game.');
-            return;
-        }
+      if (!selectedColor) {
+          showModal('Please select a color to start the game.');
+          return;
+      }
 
-        if (selectedColor.value === 'red') {
-            currentPlayer = RED;
-        } else if (selectedColor.value === 'black') {
-            currentPlayer = BLACK;
-        }
+      currentPlayer = selectedColor.value === 'red' ? RED : BLACK;
 
-        initializeBoard();
-        renderBoard();
-        gameRunning = true;
-        message.textContent = `Current turn: ${currentPlayer}`;
-    }
+      initializeBoard();
+      renderBoard();
+      gameRunning = true;
+      message.textContent = `Current turn: ${currentPlayer}`;
+  }
 
-    function resetGame() {
-        initializeBoard();
-        renderBoard();
-        gameRunning = false;
-        currentPlayer = null;
-        message.textContent = 'Choose Red or Black';
-    }
+  function resetGame() {
+      initializeBoard();
+      renderBoard();
+      gameRunning = false;
+      currentPlayer = null;
+      message.textContent = 'Choose Red or Black';
+  }
 
-    startGameBtn.addEventListener('click', startConnectFour);
+  startGameBtn.addEventListener('click', startConnectFour);
 });
-
-
 
 
 
