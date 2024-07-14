@@ -7,3 +7,33 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('scoreO').textContent = 'Score O: ' + storedTicScore.O;
     document.getElementById('scoreTie').textContent = 'Ties: ' + storedTicScore.Tie;
 });
+
+/*⠀⠀⠀⠀⣀⣤⣴⣶⣶⣶⣦⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⣠⣾⣿⣿⣿⣿⣿⣿⢿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⢀⣾⣿⣿⣿⣿⣿⣿⣿⣅⢀⣽⣿⣿⡿⠃⠀⠀⠀⠀⠀⠀⠀⠀
+⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⠛⠁⠀⠀⣴⣶⡄⠀⣶⣶⡄⠀⣴⣶⡄Developer code split
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⣀⠀⠙⠋⠁⠀⠉⠋⠁⠀⠙⠋⠀
+⠸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠙⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠃⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠈⠙⠿⣿⣿⣿⣿⣿⣿⣿⠿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀*/
+document.addEventListener('DOMContentLoaded', () => {
+
+    function loadScores() {
+       
+        let conStats = JSON.parse(localStorage.getItem('ConStats')) || {
+            redWins: 0,
+            redLosses: 0,
+            blackWins: 0,
+            blackLosses: 0
+        };
+
+        document.getElementById('redWins').textContent = conStats.redWins;
+        document.getElementById('redLosses').textContent = conStats.redLosses;
+        document.getElementById('blackWins').textContent = conStats.blackWins;
+        document.getElementById('blackLosses').textContent = conStats.blackLosses;
+    }
+
+    loadScores();
+});

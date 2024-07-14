@@ -15,6 +15,46 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentPlayer = null;
   let gameRunning = false;
 
+  let redWins = 0;
+  let redLosses = 0;
+  let blackWins = 0;
+  let blackLosses = 0;
+
+  function updateLocalStorage() {
+      const conStats = {
+          redWins,
+          redLosses,
+          blackWins,
+          blackLosses
+      };
+      localStorage.setItem('ConStats', JSON.stringify(conStats));
+  }
+
+  function loadFromLocalStorage() {
+      const conStats = JSON.parse(localStorage.getItem('ConStats')) || {};
+      redWins = conStats.redWins || 0;
+      redLosses = conStats.redLosses || 0;
+      blackWins = conStats.blackWins || 0;
+      blackLosses = conStats.blackLosses || 0;
+      updateScoreboard();
+  }
+
+  function updateScoreboard() {
+      document.getElementById('redWins').textContent = redWins;
+      document.getElementById('redLosses').textContent = redLosses;
+      document.getElementById('blackWins').textContent = blackWins;
+      document.getElementById('blackLosses').textContent = blackLosses;
+      updateLocalStorage();
+  }
+
+  function resetScores() {
+      redWins = 0;
+      redLosses = 0;
+      blackWins = 0;
+      blackLosses = 0;
+      updateScoreboard();
+  }
+
   function initializeBoard() {
       board = [];
       for (let row = 0; row < ROWS; row++) {
@@ -58,6 +98,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (checkWin(row, col)) {
           gameRunning = false;
+          if (currentPlayer === RED) {
+              redWins++;
+              blackLosses++;
+          } else {
+              blackWins++;
+              redLosses++;
+          }
+          updateScoreboard();
           showModal(`${currentPlayer.toUpperCase()} wins!`, resetGame);
           return;
       }
@@ -94,6 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       return -1;
   }
+
     function checkWin(row, col) {
       
         let count = 0;
@@ -187,10 +236,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   startGameBtn.addEventListener('click', startConnectFour);
+
+  const resetScoreBtn = document.getElementById('resetScoreBtn');
+  resetScoreBtn.addEventListener('click', () => {
+      resetScores();
+  });
+
+  loadFromLocalStorage();
 });
-
-
-
-function updateConScore() {
-    localStorage.setItem('ConStats', JSON.stringify(conStorage))
-}
