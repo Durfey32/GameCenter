@@ -36,6 +36,10 @@
     border-left: none;
   }
 
+  #padding {
+    padding-bottom: 100px
+  }
+
   .modal {
     display: flex;
     justify-content: center;
