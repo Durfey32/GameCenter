@@ -7,7 +7,7 @@
     <title>Statistics</title>
 </head>
 <body>
-  <div  class="
+  <div class="
   column
   is-three-quarters-mobile
   is-two-thirds-tablet
@@ -15,40 +15,42 @@
   is-one-third-widescreen
   is-one-quarter-fullhd
 ">
-<nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand title is-1">
-    <a href="index.html"> 🕹️</a> Game Center
-    <a class="navbar-item">
-      <svg width="200" height="160" viewBox="0 0 640 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" clip-rule="evenodd" class="bd-svg-black" />
-      </svg>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand title is-1">
+        <a href="index.html"> 🕹️</a> Game Center
+        <a class="navbar-item">
+          <svg width="200" height="160" viewBox="0 0 640 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" class="bd-svg-black" />
+          </svg>
 
-    </a>
-  </div>
+        </a>
+      </div>
 
-  <a class="navbar-burger" id="burger">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-  </a>
+      <a class="navbar-burger" id="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
 
-  <div class="navbar-menu" id="nav-links">
-    <a class="navbar-item" href="tictactoe.html">
-      Tic•Tac•Toe
-    </a>
-    <a class="navbar-item" href="connectfour.html">
-      ConnectFour
-    </a>
-    <a class="navbar-item" href="index.html">
-      Home
-    </a>
-    <a class="navbar-item" href="stats.html">
-      Statistics
-    </a>
-  </div>
+      <div class="navbar-menu" id="nav-links">
+        <a class="navbar-item" href="index.html">
+          Home
+        </a>
+        <a class="navbar-item" href="tictactoe.html">
+          Tic•Tac•Toe
+        </a>
+        <a class="navbar-item" href="connectfour.html">
+          ConnectFour
+        </a>
+        <a class="navbar-item" href="stats.html">
+          Statistics
+        </a>
+      </div>
   </div>
 </nav>
+
+
       <div class="column">
         <h1 class="title is-2 has-text-centered">Statistics</h1>
             <h2 class="button is-info is-dark cell subtitle is-4" >  
@@ -59,14 +61,48 @@
               <span id="scoreO"></span>
               <span id="scoreTie"></span>
               </div>
-          <div class="ConStats">
-            <h2 class="button is-link is-light cell subtitle is-4"> 
-              <a href="connectfour.html">Connect Four</a>
-            </h2>
-              <Span class="ConArea"></Span>
+    </div>
+    </div>
+    <section class="section">
+      <div class="container">
+        <h1 class="title has-text-centered">Connect Four Statistics</h1>
+        <div class="columns is-centered">
+          <div class="column is-half">
+            <table class="table is-fullwidth">
+              <thead>
+                <tr>
+                  <th>Player</th>
+                  <th>Wins</th>
+                  <th>Losses</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Red</td>
+                  <td id="redWins">0</td>
+                  <td id="redLosses">0</td>
+                </tr>
+                <tr>
+                  <td>Black</td>
+                  <td id="blackWins">0</td>
+                  <td id="blackLosses">0</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="has-text-centered">
+              <a href="connectfour.html" class="button is-info">Back to Game</a>
+            </div>
           </div>
-    </div>
-    </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          Developed by <strong>Matthew Holmes & Spencer Durfey</strong> &copy;
+        </p>
+      </div>
+    </footer>
 </body>
 
 
