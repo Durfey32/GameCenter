@@ -25,14 +25,18 @@ document.addEventListener('DOMContentLoaded', () => {
         let conStats = JSON.parse(localStorage.getItem('ConStats')) || {
             redWins: 0,
             redLosses: 0,
+            redTies: 0,
             blackWins: 0,
-            blackLosses: 0
+            blackLosses: 0,
+            blackTies: 0
         };
 
         document.getElementById('redWins').textContent = conStats.redWins;
         document.getElementById('redLosses').textContent = conStats.redLosses;
+        document.getElementById('redTies').textContent = conStats.redTies;
         document.getElementById('blackWins').textContent = conStats.blackWins;
         document.getElementById('blackLosses').textContent = conStats.blackLosses;
+        document.getElementById('blackTies').textContent = conStats.blackTies
     }
 
     loadScores();

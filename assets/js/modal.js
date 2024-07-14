@@ -1,4 +1,4 @@
-var modal = document.getElementById("myModal");
+/*var modal = document.getElementById("myModal");
 
  var closeButton = modal.querySelector(".modal-close");
 
@@ -8,3 +8,5 @@ var modal = document.getElementById("myModal");
      modal.classList.remove("is-active");
    }
  });
+
+ */
