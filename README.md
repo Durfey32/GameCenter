@@ -3,7 +3,7 @@
 # Group Do: Designing your MVP
 
 ## Description
-    The main goal of this project was to make a function MVP of the page we design and explore. Our group decided to work together to make a GameCenter. This GameCenter include two games since we were two people. The two games were TicTacToe and ConnectFour. each of us were able to help with the home page and the stats page and we were able to explore making the games and branch out if we got stuck.
+The main goal of this project was to make a function MVP of the page we design and explore. Our group decided to work together to make a GameCenter. This GameCenter include two games since we were two people. The two games were TicTacToe and ConnectFour. each of us were able to help with the home page and the stats page and we were able to explore making the games and branch out if we got stuck.
 
     Example of the landing page:
 ![alt text](<assets/css/Landing page.png>)
