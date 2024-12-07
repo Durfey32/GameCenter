@@ -5,7 +5,7 @@
 ## Description
 The main goal of this project was to make a function MVP of the page we design and explore. Our group decided to work together to make a GameCenter. This GameCenter include two games since we were two people. The two games were TicTacToe and ConnectFour. each of us were able to help with the home page and the stats page and we were able to explore making the games and branch out if we got stuck.
 
-    Example of the landing page:
+Example of the landing page:
 ![alt text](<assets/css/Landing page.png>)
 ## TicTacToe
   ![alt text](assets/css/tictactoe.png)
@@ -66,13 +66,11 @@ This was the corresponding HTML that linked to the Javascript to create the game
 ```
 ## Presentation
 
-    Click here to link to GameCenter presentation...  https://docs.google.com/presentation/d/17jB1vOyptAwx6cfDuL8DgnaaRicvQS79szWF59XzAlY/edit?usp=sharing
+Click here to link to GameCenter presentation...  https://docs.google.com/presentation/d/17jB1vOyptAwx6cfDuL8DgnaaRicvQS79szWF59XzAlY/edit?usp=sharing
 
 ## Learning Points
-    In this project we were able to learn what it takes to start a webpage and see it all the way to the MVP or minimum viable product. This will be a crucial lesson for when we are able to move on to working in the field moving forward. 
+ In this project we were able to learn what it takes to start a webpage and see it all the way to the MVP or minimum viable product. This will be a crucial lesson for when we are able to move on to working in the field moving forward. 
 
 ### Group 10
-```
-This project was made by: 
-Spencer Durfey & Matthew Holmes
-```
+This project was made by: Spencer Durfey & Matthew Holmes
+
