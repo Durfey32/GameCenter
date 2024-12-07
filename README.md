@@ -68,6 +68,8 @@ This was the corresponding HTML that linked to the Javascript to create the game
 
 Click here to link to GameCenter presentation...  https://docs.google.com/presentation/d/17jB1vOyptAwx6cfDuL8DgnaaRicvQS79szWF59XzAlY/edit?usp=sharing
 
+Deplyed Site: https://durfey32.github.io/GameCenter/
+
 ## Learning Points
  In this project we were able to learn what it takes to start a webpage and see it all the way to the MVP or minimum viable product. This will be a crucial lesson for when we are able to move on to working in the field moving forward. 
 
